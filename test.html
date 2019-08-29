@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>test</title>
+  </head>
+
+  <style>
+    body,
+    html {
+      position: relative;
+      height: 100%;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .container {
+      transition: all 2s;
+      width: 100px;
+      height: 100px;
+      background-color: crimson;
+      font-size: 13px;
+    }
+    .container:hover {
+      width: 200px;
+    }
+
+    .container .child {
+      width: 50px;
+      height: 50px;
+      background-color: white;
+      color: #333;
+      line-height: 50px;
+      text-align: center;
+      transition: inherit;
+    }
+
+    .container .child:hover {
+      color: #999;
+    }
+
+    .content {
+    }
+    .content .tail {
+    }
+    .content .icon {
+    }
+    .content .desc {
+    }
+  </style>
+
+  <body>
+    <div class="container">
+      <div class="child">
+        HOVER
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="tail"></div>
+      <div class="icon"></div>
+      <div class="desc"></div>
+    </div>
+  </body>
+
+  <script>
+    function a() {
+      if (true) return;
+
+      console.log('a');
+    }
+
+    a();
+  </script>
+</html>

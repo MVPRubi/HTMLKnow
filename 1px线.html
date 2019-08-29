@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>1pxLine</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<style>
+  html {
+    height: 100%;
+    width: 100%;
+    background: white;
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    color: #666;
+  }
+
+  main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .one-pixel-line {
+    width: 229px;
+    position: relative;
+  }
+
+  .one-pixel-line::after {
+    content: '';
+    /* width: 229px; */
+    display: block;
+    /* bottom: 0;
+    left: 0; */
+    box-shadow: 0 0 0 .3333px #d8e2e9;
+    /* transform-origin: 0 bottom; */
+    /* transform: scaleY(.5) translateZ(0); */
+  }
+
+  .form .one-pixel-line:nth-last-child(1)::after {
+    margin-left: -15px;
+  }
+
+  /* 
+  @media (min-resolution: 2dppx) {
+    span.one-pixel-line.shadow::after {
+      box-shadow: 0 0 0 .5px #d8e2e9;
+    }
+  }
+
+  @media (min-resolution: 3dppx) {
+    span.one-pixel-line.shadow::after {
+      box-shadow: 0 0 0 .33px #d8e2e9;
+    }
+  } */
+
+  .normal-line {
+    width: 229px;
+    height: 1px;
+    background-color: #d8e2e9;
+  }
+
+  .one-pixel-scale {
+    width: 229px;
+  }
+
+  .one-pixel-scale::after {
+    display: block;
+    border-bottom: 1px solid #d8e2e9;
+    content: '';
+    transform: scaleY(0.3333) translateZ(0);
+    transform-origin: 0 0;
+  }
+
+  .form .one-pixel-scale:nth-last-child(1)::after {
+    margin-left: -15px;
+  }
+
+  .block {
+    width: 229px;
+    height: 150px;
+    background-color: white;
+    margin-left: 15px;
+  }
+
+  .normal-block {
+    border: 1px solid #d8e2e9;
+  }
+
+  .scale-block {}
+
+  .scale-block::after {
+    content: '';
+    border: 1px solid #d8e2e9;
+    transform: scale(.5);
+  }
+
+  .row {
+    width: calc(100% - 15px);
+    height: 50px;
+    background-color: white;
+    line-height: 50px;
+    padding-left: 15px;
+  }
+
+  @media (-webkit-min-device-pixel-ratio: 2) {
+    .line-right {
+      background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, transparent), color-stop(50%, #d8e2e9), color-stop(100%, #d8e2e9));
+      background-image: -webkit-linear-gradient(left, transparent 50%, #d8e2e9 0, #d8e2e9);
+      background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, transparent), color-stop(50%, #d8e2e9), to(#d8e2e9));
+      background-image: -o-linear-gradient(left, transparent 50%, #d8e2e9 50%, #d8e2e9 100%);
+      background-image: linear-gradient(90deg, transparent 50%, #d8e2e9 0, #d8e2e9);
+      background-repeat: no-repeat;
+      background-position: 100%;
+      -webkit-background-size: 1px 100%;
+      background-size: 1px 100%;
+      border: none;
+    }
+
+    .line-right {
+      border-right: 1px solid #d8e2e9;
+    }
+
+  }
+
+  #gradient {
+    border: 10px solid;
+    /* border-image: linear-gradient(#d8e2e9, yellow) 10; */
+    padding: 20px;
+    transition: all 2s;
+    border-color: linear-gradient(#d8e2e9, yellow);
+  }
+
+  #gradient:hover {
+    /* border-image: linear-gradient(yellow, #d8e2e9) 10; */
+    /* border-color: aqua; */
+  }
+
+  .border-d8e2e9 {
+    border-width: 1px;
+    border-image: url(border-d8e2e9.e5eb08.5bbda46c.png) 2 2 2 2;
+    border-style: solid;
+  }
+</style>
+<main class="main">
+  <span class="normal-line"></span><span>normal</span>
+  <br />
+  <span class="one-pixel-line"></span><span>1px shadow</span>
+  <br />
+  <span class="one-pixel-scale"></span><span>1px scale</span>
+  <br />
+  <div class="block normal-block">normal</div>
+  <br />
+  <div class="block scale-block line-right">normal</div>
+  <br />
+  <div class="block border-d8e2e9">image border</div>
+  <br />
+  <div class="form">
+    <div class="row one-pixel-scale">
+      LINE SCALE
+    </div>
+    <div class="row one-pixel-scale">
+      LINE SCALE
+    </div>
+  </div>
+  <br />
+  <div class="form">
+    <div class="row one-pixel-line">
+      LINE SHADOW
+    </div>
+    <div class="row one-pixel-line">
+      LINE SHADOW
+    </div>
+  </div>
+  <br />
+  <div class="row" style="border-bottom:1px solid #d8e2e9">
+    LINE TWO
+  </div>
+  <br />
+  <div id="gradient">The image is stretched to fill the area.</div>
+</main>
+
+<body>
+
+</body>
+
+</html>
